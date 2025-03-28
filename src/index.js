@@ -7,7 +7,7 @@ import createTestAction from "./components/testAction";
 
 // for testing
 createTestAction(
-  getCurrentStockPrices("AAPL", "TSLA", "V"),
+  () => getCurrentStockPrices("AAPL", "TSLA", "V"),
   "Test stock Prices"
 );
 
