@@ -1,14 +1,11 @@
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
-
-console.log(process.env);
 
 // Normally, this will be in the backend to protect the API_KEY.
-const API_KEY = process.env.API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 const baseUrl = "https://api.stockdata.org/v1/data";
 
 export async function getCurrentStockPrices(...symbols) {
+  // getting multiple stock prices is 1 call.
   const tickers = symbols.join(",");
 
   try {
@@ -21,8 +18,6 @@ export async function getCurrentStockPrices(...symbols) {
     return null;
   }
 }
-
-// console.log(getCurrentStockPrices("AAPL", "TSLA", "V"));
 
 export async function getEndOfDayStockPrices(symbol) {
   try {
