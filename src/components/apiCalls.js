@@ -7,7 +7,7 @@ const baseUrl = "https://api.stockdata.org/v1/data";
 export async function getCurrentStockPrices(...symbols) {
   // getting multiple stock prices is 1 call.
   const tickers = symbols.join(",");
-
+  console.log("API called");
   try {
     const response = await axios.get(
       baseUrl + `/quote?symbols=${tickers}&api_token=${API_KEY}`
@@ -20,6 +20,7 @@ export async function getCurrentStockPrices(...symbols) {
 }
 
 export async function getEndOfDayStockPrices(symbol) {
+  console.log("API called");
   try {
     const response = await axios.get(
       baseUrl + `/eod?symbols=${symbol}&api_token=${API_KEY}`
@@ -32,6 +33,7 @@ export async function getEndOfDayStockPrices(symbol) {
 }
 
 export async function getStockNews(symbol) {
+  console.log("API called");
   try {
     const response = await axios.get(baseUrl + `/${symbol}`);
     return response;
