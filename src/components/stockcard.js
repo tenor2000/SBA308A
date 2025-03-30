@@ -1,14 +1,16 @@
 function createCard(stockObj) {
   const card = document.createElement("div");
-  card.classList = "card";
-  card.style = "width: 18rem";
+  card.classList = "card shadow p-3 mb-5 bg-body-tertiary rounded";
+  card.style = "width: 20rem";
 
   const perChange =
     ((stockObj.price - stockObj.previous_close_price) /
       stockObj.previous_close_price) *
     100;
 
-  const closeDate = new Date(stockObj.last_trade_time).toLocaleString();
+  const closeDate = new Date(stockObj.last_trade_time);
+  const date = closeDate.toLocaleDateString();
+  const time = closeDate.toLocaleTimeString();
 
   card.innerHTML = `
     <div class="card-body fade-in">
@@ -18,8 +20,9 @@ function createCard(stockObj) {
         <b>Current Price:</b> $${stockObj.price} ${stockObj.currency}<br>
         <strong>Change Amt:</strong> ${stockObj.day_change}<br>
         <strong>Percent Change:</strong> ${perChange.toFixed(2)}%<br>
-        <strong>Trading Volume:</strong> ${stockObj.volume}
-        <strong>Last Closing:</strong> ${closeDate}
+        <strong>Trading Volume:</strong> ${stockObj.volume}<br>
+        <strong>Last Close Date:</strong> ${date}<br>
+        <strong>Last Close Time:</strong> ${time}
       </p>
     </div>
   `;
