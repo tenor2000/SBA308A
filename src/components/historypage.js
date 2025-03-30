@@ -36,9 +36,9 @@ function historypage(mainDiv) {
       return;
     }
     try {
-      // const responseObj = await getEndOfDayStockPrices(ticker);
-      // const responseData = responseObj.data.data; // weird, I know
-      const responseData = eodObjReturn.data;
+      const responseObj = await getEndOfDayStockPrices(ticker);
+      const responseData = responseObj.data.data; // weird, I know
+      // const responseData = eodObjReturn.data;
       console.log(responseData);
 
       if (responseData) {

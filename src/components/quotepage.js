@@ -60,6 +60,10 @@ function quotepage(mainDiv) {
           responseData.forEach((tickerObj) => {
             const card = createCard(tickerObj);
             infobox.appendChild(card);
+            // transition effect in style.css
+            setTimeout(() => {
+              card.classList.add("fade-in");
+            }, 10);
           });
         } else {
           err.textContent =
