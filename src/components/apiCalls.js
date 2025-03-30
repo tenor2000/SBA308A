@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Normally, this will be in the backend to protect the API_KEY.
 const API_KEY = import.meta.env.VITE_API_KEY;
-const baseUrl = "https://api.stockdata.org/v1/data";
+const baseUrl = "https://api.stockdata.org/v1";
 
 export async function getCurrentStockPrices(...symbols) {
   // getting multiple stock prices is 1 call.
@@ -10,7 +10,7 @@ export async function getCurrentStockPrices(...symbols) {
   console.log("API called");
   try {
     const response = await axios.get(
-      baseUrl + `/quote?symbols=${tickers}&api_token=${API_KEY}`
+      baseUrl + `/data/quote?symbols=${tickers}&api_token=${API_KEY}`
     );
     return response;
   } catch (error) {
@@ -23,7 +23,7 @@ export async function getEndOfDayStockPrices(symbol) {
   console.log("API called");
   try {
     const response = await axios.get(
-      baseUrl + `/eod?symbols=${symbol}&api_token=${API_KEY}`
+      baseUrl + `/data/eod?symbols=${symbol}&api_token=${API_KEY}`
     );
     return response;
   } catch (error) {
@@ -35,7 +35,9 @@ export async function getEndOfDayStockPrices(symbol) {
 export async function getStockNews(symbol) {
   console.log("API called");
   try {
-    const response = await axios.get(baseUrl + `/${symbol}`);
+    const response = await axios.get(
+      baseUrl + `/news/all?symbols=${symbol}&api_token=${API_KEY}`
+    );
     return response;
   } catch (error) {
     console.error("Error fetching data", error);
