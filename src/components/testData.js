@@ -1047,3 +1047,129 @@ export const eodObjReturn = {
     },
   ],
 };
+
+export const newsObjReturn = {
+  meta: {
+    found: 140037,
+    returned: 3,
+    limit: 3,
+    page: 1,
+  },
+  data: [
+    {
+      uuid: "70cb577e-c2dd-4dde-b501-f713823a4939",
+      title: "Trump wins 2024, markets surge globally",
+      description:
+        "Global markets experience a significant surge following Trump's victory in the 2024 election.",
+      keywords: "",
+      snippet:
+        "Donald Trump has won the 2024 presidential election, defeating Vice President Kamala Harris. Trump secured the 270 electoral votes needed for victory after winn...",
+      url: "https://www.killerstartups.com/trump-wins-2024-markets-surge-globally/",
+      image_url:
+        "https://images.killerstartups.com/wp-content/uploads/2024/11/Trump-Wins.jpg",
+      language: "en",
+      published_at: "2024-11-08T01:24:00.000000Z",
+      source: "killerstartups.com",
+      relevance_score: null,
+      entities: [
+        {
+          symbol: "TSLA",
+          name: "Tesla, Inc.",
+          exchange: null,
+          exchange_long: null,
+          country: "us",
+          type: "equity",
+          industry: "Consumer Cyclical",
+          match_score: 12.133104,
+          sentiment_score: 0.7783,
+          highlights: [
+            {
+              highlight:
+                "., majority-owned by Trump, and Tesl[+253 characters]",
+              sentiment: 0.7783,
+              highlighted_in: "main_text",
+            },
+          ],
+        },
+      ],
+      similar: [],
+    },
+    {
+      uuid: "ed35bdcd-6f6a-4007-9949-b769fbe2e36d",
+      title:
+        "Amazon.com mulls new multi-billion dollar investment in Anthropic, the Information reports By Reuters",
+      description:
+        "Amazon.com mulls new multi-billion dollar investment in Anthropic, the Information reports",
+      keywords: "",
+      snippet:
+        "(Reuters) -Amazon is in talks for its second multi-billion dollar investment in artificial intelligence startup Anthropic, the Information reported on Thursday,...",
+      url: "https://www.investing.com/news/stock-market-news/amazoncom-mulls-new-multibillion-dollar-investment-in-anthropic-the-information-reports-3710319",
+      image_url:
+        "https://i-invdn-com.investing.com/news/amazon_800x533_L_1411373482.jpg",
+      language: "en",
+      published_at: "2024-11-07T23:49:09.000000Z",
+      source: "investing.com",
+      relevance_score: null,
+      entities: [
+        {
+          symbol: "AMZN",
+          name: "Amazon.com, Inc.",
+          exchange: null,
+          exchange_long: null,
+          country: "us",
+          type: "equity",
+          industry: "Consumer Cyclical",
+          match_score: 34.292408,
+          sentiment_score: 0,
+          highlights: [
+            {
+              highlight:
+                "Amazon.com mulls new multi-billion dollar investment in Anthropic, the Information reports By Reuters",
+              sentiment: 0,
+              highlighted_in: "title",
+            },
+          ],
+        },
+      ],
+      similar: [],
+    },
+    {
+      uuid: "2ca2cbbf-c613-4d1c-b470-9d1bac3a256a",
+      title:
+        "Market Soars to Record Highs: November 7, 2024 Stock Market Recap",
+      description:
+        "The U.S. stock market experienced a historic surge on Thursday, November 7, 2024, as investors reacted to Donald Trump's unexpected victory in the 2024 U.S.",
+      keywords: "",
+      snippet:
+        "Why Was the Market Up Today? Trump’s Victory Sparks Rally\n\nThe U.S. stock market experienced a historic surge on Thursday, November 7, 2024, as investors reac...",
+      url: "https://thestockmarketwatch.com/stock-market-news/market-soars-to-record-highs-november-7-2024-stock-market-recap/48362/",
+      image_url:
+        "https://thestockmarketwatch.com/stock-market-news/wp-content/uploads/2024/08/5.jpg",
+      language: "en",
+      published_at: "2024-11-07T22:28:28.000000Z",
+      source: "thestockmarketwatch.com",
+      relevance_score: null,
+      entities: [
+        {
+          symbol: "TSLA",
+          name: "Tesla, Inc.",
+          exchange: null,
+          exchange_long: null,
+          country: "us",
+          type: "equity",
+          industry: "Consumer Cyclical",
+          match_score: 17.491323,
+          sentiment_score: 0.7783,
+          highlights: [
+            {
+              highlight: "Tesla, Inc. (TSLA), wh[+166 characters]",
+              sentiment: 0.7783,
+              highlighted_in: "main_text",
+            },
+          ],
+        },
+      ],
+      similar: [],
+    },
+  ],
+};
