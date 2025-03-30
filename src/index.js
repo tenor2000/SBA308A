@@ -1,16 +1,8 @@
 import pageNotFound from "./components/404page";
-import { getCurrentStockPrices } from "./components/apiCalls";
 import homepage from "./components/homepage";
 import newspage from "./components/newspage";
 import quotepage from "./components/quotepage";
 import historypage from "./components/historypage";
-import createTestAction from "./components/testAction";
-
-// for testing
-createTestAction(
-  () => getCurrentStockPrices("AAPL", "TSLA", "V"),
-  "Test stock Prices"
-);
 
 window.onhashchange = loadPage;
 
