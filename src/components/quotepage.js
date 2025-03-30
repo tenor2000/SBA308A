@@ -1,4 +1,4 @@
-import stockObjReturn from "./testData.js";
+import { stockObjReturn } from "./testData.js";
 import createCard from "./stockcard";
 import { getCurrentStockPrices } from "./apiCalls.js";
 
