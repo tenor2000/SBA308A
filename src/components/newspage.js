@@ -17,7 +17,7 @@ function newspage(mainDiv) {
   container.appendChild(errorBox);
   container.appendChild(infoBox);
 
-  const newsForm = container.firstElementChild;
+  const newsForm = searchbar.firstElementChild;
 
   newsForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -36,15 +36,19 @@ function newspage(mainDiv) {
       return;
     }
     try {
-      // const responseObj = await getEndOfDayStockPrices(ticker);
-      // const responseData = responseObj.data.data; // weird, I know
-      const responseData = newsObjReturn.data;
+      const responseObj = await getStockNews(ticker);
+      const responseData = responseObj.data.data; // weird, I know
+      // const responseData = newsObjReturn.data;
       console.log(responseData);
 
       if (responseData) {
         responseData.forEach((newsObj) => {
           const card = createNewsCard(newsObj);
-          eodTBody.appendChild(card);
+          infoBox.appendChild(card);
+          // transition effect in style.css
+          setTimeout(() => {
+            card.classList.add("fade-in");
+          }, 10);
         });
       } else {
         console.log("No news was found for the provided ticker symbol.");
@@ -57,8 +61,8 @@ function newspage(mainDiv) {
 
 function createInfoBox() {
   const infoBoxDiv = document.createElement("div");
-  infoBoxDiv.classList = "d-flex w-100 h-100 gap-5";
-  // infoBoxDiv.style = "border: 1px solid red";
+  infoBoxDiv.classList =
+    "d-flex w-75 h-100 gap-2 flex-column justify-content-center align-items-center mx-auto";
 
   return infoBoxDiv;
 }
@@ -79,7 +83,7 @@ function clear(element) {
 function createInstructions() {
   const container = document.createElement("h3");
   container.classList = "m-auto pt-5";
-  container.textContent = "Get the last 180 days of stock information.";
+  container.textContent = "Get the latest news for your ticker symbol.";
   return container;
 }
 
