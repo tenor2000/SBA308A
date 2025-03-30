@@ -1,7 +1,6 @@
 function createNewsCard(newsObj) {
   const card = document.createElement("div");
-  card.classList = "card shadow p-3 mb-5 bg-body-tertiary rounded";
-  card.style = "max-width: 80%";
+  card.classList = "card shadow p-3 mb-5 bg-body-tertiary rounded w-50";
 
   card.innerHTML = `
     <img src="${newsObj.image_url}" class="card-image-top" alt="news image">
