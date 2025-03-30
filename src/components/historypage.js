@@ -1,5 +1,6 @@
 import { eodObjReturn } from "./testData.js";
 import { createTableHead, createRow } from "./eodtable.js";
+import createSearchbar from "./searchbar.js";
 import { getEndOfDayStockPrices } from "./apiCalls.js";
 
 function historypage(mainDiv) {
@@ -16,7 +17,7 @@ function historypage(mainDiv) {
   container.appendChild(table);
   container.appendChild(errorBox);
 
-  const eodForm = document.getElementById("eod-form");
+  const eodForm = searchbar.firstElementChild;
 
   eodForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -80,32 +81,6 @@ function clear(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
-}
-
-function createSearchbar() {
-  const container = document.createElement("div");
-  container.classList = "row m-auto p-5";
-
-  const searchForm = document.createElement("form");
-  searchForm.id = "eod-form";
-  searchForm.classList = "d-flex m-auto";
-
-  const input = document.createElement("input");
-  input.classList = "form-control me-2";
-  input.type = "search";
-  input.name = "query";
-  input.placeholder = "symbol";
-
-  const button = document.createElement("button");
-  button.classList = "btn btn-outline-success";
-  button.type = "submit";
-  button.textContent = "Search";
-
-  container.appendChild(searchForm);
-  searchForm.appendChild(input);
-  searchForm.appendChild(button);
-
-  return container;
 }
 
 function createInstructions() {

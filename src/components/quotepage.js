@@ -1,4 +1,5 @@
 import { stockObjReturn } from "./testData.js";
+import createSearchbar from "./searchbar.js";
 import createCard from "./stockcard";
 import { getCurrentStockPrices } from "./apiCalls.js";
 
@@ -13,7 +14,7 @@ function quotepage(mainDiv) {
   container.appendChild(searchbar);
   container.appendChild(infobox);
 
-  const searchForm = document.getElementById("quote-form");
+  const searchForm = searchbar.firstElementChild;
 
   searchForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -102,32 +103,6 @@ function clear(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
-}
-
-function createSearchbar() {
-  const container = document.createElement("div");
-  container.classList = "row m-auto p-5";
-
-  const searchForm = document.createElement("form");
-  searchForm.id = "quote-form";
-  searchForm.classList = "d-flex m-auto";
-
-  const input = document.createElement("input");
-  input.classList = "form-control me-2";
-  input.type = "search";
-  input.name = "query";
-  input.placeholder = "s1, s2, s3...";
-
-  const button = document.createElement("button");
-  button.classList = "btn btn-outline-success";
-  button.type = "submit";
-  button.textContent = "Search";
-
-  container.appendChild(searchForm);
-  searchForm.appendChild(input);
-  searchForm.appendChild(button);
-
-  return container;
 }
 
 function createInstructions() {
