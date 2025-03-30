@@ -18,11 +18,11 @@ function createCard(stockObj) {
       <h5 class="card-subtitle mb-2 text-body-secondary">${stockObj.name}</h6>
       <p class="card-text">
         <b>Current Price:</b> $${stockObj.price} ${stockObj.currency}<br>
-        <strong>Change Amt:</strong> ${stockObj.day_change}<br>
-        <strong>Percent Change:</strong> ${perChange.toFixed(2)}%<br>
-        <strong>Trading Volume:</strong> ${stockObj.volume}<br>
-        <strong>Last Close Date:</strong> ${date}<br>
-        <strong>Last Close Time:</strong> ${time}
+        <b>Change Amt:</b> ${stockObj.day_change}<br>
+        <b>Percent Change:</b> ${perChange.toFixed(2)}%<br>
+        <b>Trading Volume:</b> ${stockObj.volume}<br>
+        <b>Last Close Date:</b> ${date}<br>
+        <b>Last Close Time:</b> ${time}
       </p>
     </div>
   `;
