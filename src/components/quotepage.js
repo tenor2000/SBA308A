@@ -51,9 +51,9 @@ function quotepage(mainDiv) {
       infobox.appendChild(err);
     } else {
       try {
-        // const responseObj = await getCurrentStockPrices(...tickerArray);
-        // const responseData = responseObj.data.data; // weird, I know
-        const responseData = stockObjReturn.data;
+        const responseObj = await getCurrentStockPrices(...tickerArray);
+        const responseData = responseObj.data.data; // weird, I know
+        // const responseData = stockObjReturn.data;
         console.log(responseData);
 
         if (responseData) {
@@ -111,7 +111,7 @@ function clear(element) {
 
 function createInstructions() {
   const container = document.createElement("h3");
-  container.classList = "m-auto pt-5";
+  container.classList = "m-auto pt-5 fw-bold text-primary";
   container.textContent = "Search using ticker symbols. Maximum of 3.";
   return container;
 }

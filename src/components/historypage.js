@@ -10,6 +10,10 @@ function historypage(mainDiv) {
   const instructions = createInstructions();
   const searchbar = createSearchbar();
   const table = createTable();
+  // transition effect in style.css
+  setTimeout(() => {
+    table.classList.add("fade-in");
+  }, 10);
   const errorBox = createErrorBox();
 
   container.appendChild(instructions);
@@ -39,7 +43,7 @@ function historypage(mainDiv) {
       const responseObj = await getEndOfDayStockPrices(ticker);
       const responseData = responseObj.data.data; // weird, I know
       // const responseData = eodObjReturn.data;
-      console.log(responseData);
+      // console.log(responseData);
 
       if (responseData) {
         responseData.forEach((tickerObj) => {
@@ -85,7 +89,7 @@ function clear(element) {
 
 function createInstructions() {
   const container = document.createElement("h3");
-  container.classList = "m-auto pt-5";
+  container.classList = "m-auto pt-5 fw-bold text-primary";
   container.textContent = "Get the last 180 days of stock information.";
   return container;
 }

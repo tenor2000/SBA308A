@@ -82,7 +82,7 @@ function clear(element) {
 
 function createInstructions() {
   const container = document.createElement("h3");
-  container.classList = "m-auto pt-5";
+  container.classList = "m-auto pt-5 fw-bold text-primary";
   container.textContent = "Get the latest news for your ticker symbol.";
   return container;
 }
