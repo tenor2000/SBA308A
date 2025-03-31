@@ -6,6 +6,14 @@ import historypage from "./components/historypage";
 
 window.onhashchange = loadPage;
 
+window.onload = function () {
+  if (!location.hash || location.hash === "#") {
+    location.hash = "#home";
+  } else {
+    loadPage();
+  }
+};
+
 function loadPage() {
   const main = document.getElementById("main");
   while (main.firstChild) {
@@ -13,6 +21,8 @@ function loadPage() {
   }
 
   switch (location.hash) {
+    case "":
+    case "#":
     case "#home":
       homepage(main);
       break;
